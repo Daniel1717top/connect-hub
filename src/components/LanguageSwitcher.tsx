@@ -6,12 +6,12 @@ const LanguageSwitcher = () => {
 
   return (
     <button
-      onClick={() => setLang(lang === "en" ? "ru" : "en")}
+      onClick={() => setLang(lang === "en" ? "uk" : "en")}
       className="flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium text-foreground hover:bg-primary/10 transition-colors"
       aria-label="Switch language"
     >
       <Globe className="w-4 h-4" />
-      <span className="uppercase tracking-wider">{lang}</span>
+      <span className="uppercase tracking-wider">{lang === "uk" ? "UK" : "EN"}</span>
     </button>
   );
 };

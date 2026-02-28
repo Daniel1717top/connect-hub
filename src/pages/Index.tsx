@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { TrendingUp, Building2, BarChart3, Shield, ArrowRight } from "lucide-react";
 
 const properties = [
-  { id: 1, nameEn: "Steel Tower Residences", nameRu: "Резиденции Стальная Башня", location: "Moscow, Presnensky", area: "240 m²", price: "$1.2M", roi: "8.4%" },
-  { id: 2, nameEn: "Granite Business Center", nameRu: "Бизнес-центр Гранит", location: "Moscow, Tverskoy", area: "1,800 m²", price: "$4.5M", roi: "6.9%" },
-  { id: 3, nameEn: "Concrete Loft Complex", nameRu: "Лофт-комплекс Бетон", location: "St. Petersburg, Petrogradsky", area: "380 m²", price: "$890K", roi: "7.8%" },
+  { id: 1, nameEn: "Steel Tower Residences", nameUk: "Резиденції Сталева Вежа", location: "Kyiv, Pechersk", area: "240 m²", price: "€1.2M", roi: "8.4%" },
+  { id: 2, nameEn: "Granite Business Center", nameUk: "Бізнес-центр Граніт", location: "Kyiv, Podil", area: "1,800 m²", price: "€4.5M", roi: "6.9%" },
+  { id: 3, nameEn: "Concrete Loft Complex", nameUk: "Лофт-комплекс Бетон", location: "Lviv, City Centre", area: "380 m²", price: "€890K", roi: "7.8%" },
 ];
 
 const Index = () => {
@@ -20,7 +20,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 via-transparent to-primary/5" />
         <div className="absolute top-20 right-20 w-96 h-96 border border-border/30 rotate-45 hidden lg:block" />
@@ -53,16 +52,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
       <section className="py-24 bg-card">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">{t("services.title")}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s, i) => (
-              <div
-                key={i}
-                className="p-6 border border-border rounded bg-background hover:border-primary/50 transition-colors group"
-              >
+              <div key={i} className="p-6 border border-border rounded bg-background hover:border-primary/50 transition-colors group">
                 <s.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-base font-semibold mb-2">{s.title}</h3>
                 <p className="text-sm text-muted-foreground">{s.desc}</p>
@@ -72,7 +67,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Properties */}
       <section className="py-24">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between mb-12">
@@ -88,7 +82,7 @@ const Index = () => {
                   <Building2 className="w-16 h-16 text-primary/30" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-semibold mb-1">{lang === "en" ? p.nameEn : p.nameRu}</h3>
+                  <h3 className="font-semibold mb-1">{lang === "en" ? p.nameEn : p.nameUk}</h3>
                   <p className="text-sm text-muted-foreground mb-3">{p.location}</p>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">{t("properties.area")}: {p.area}</span>

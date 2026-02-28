@@ -2,12 +2,12 @@ import { useI18n } from "@/contexts/I18nContext";
 import { Building2 } from "lucide-react";
 
 const allProperties = [
-  { id: 1, nameEn: "Steel Tower Residences", nameRu: "Резиденции Стальная Башня", location: "Moscow, Presnensky", area: "240 m²", price: "$1.2M", roi: "8.4%", type: "Residential" },
-  { id: 2, nameEn: "Granite Business Center", nameRu: "Бизнес-центр Гранит", location: "Moscow, Tverskoy", area: "1,800 m²", price: "$4.5M", roi: "6.9%", type: "Commercial" },
-  { id: 3, nameEn: "Concrete Loft Complex", nameRu: "Лофт-комплекс Бетон", location: "St. Petersburg", area: "380 m²", price: "$890K", roi: "7.8%", type: "Residential" },
-  { id: 4, nameEn: "Iron Gate Office Park", nameRu: "Офис-парк Железные Ворота", location: "Moscow, Khamovniki", area: "3,200 m²", price: "$8.1M", roi: "6.2%", type: "Commercial" },
-  { id: 5, nameEn: "Basalt Heights", nameRu: "Базальтовые Высоты", location: "Sochi, Central", area: "420 m²", price: "$1.8M", roi: "9.1%", type: "Residential" },
-  { id: 6, nameEn: "Alloy Warehouse District", nameRu: "Складской район Сплав", location: "Kazan, Industrial", area: "5,600 m²", price: "$3.2M", roi: "11.3%", type: "Industrial" },
+  { id: 1, nameEn: "Steel Tower Residences", nameUk: "Резиденції Сталева Вежа", location: "Kyiv, Pechersk", area: "240 m²", price: "€1.2M", roi: "8.4%", type: "Residential" },
+  { id: 2, nameEn: "Granite Business Center", nameUk: "Бізнес-центр Граніт", location: "Kyiv, Podil", area: "1,800 m²", price: "€4.5M", roi: "6.9%", type: "Commercial" },
+  { id: 3, nameEn: "Concrete Loft Complex", nameUk: "Лофт-комплекс Бетон", location: "Lviv, City Centre", area: "380 m²", price: "€890K", roi: "7.8%", type: "Residential" },
+  { id: 4, nameEn: "Iron Gate Office Park", nameUk: "Офіс-парк Залізні Ворота", location: "Kyiv, Obolon", area: "3,200 m²", price: "€8.1M", roi: "6.2%", type: "Commercial" },
+  { id: 5, nameEn: "Basalt Heights", nameUk: "Базальтові Висоти", location: "Odesa, Arcadia", area: "420 m²", price: "€1.8M", roi: "9.1%", type: "Residential" },
+  { id: 6, nameEn: "Alloy Warehouse District", nameUk: "Складський район Сплав", location: "Dnipro, Industrial", area: "5,600 m²", price: "€3.2M", roi: "11.3%", type: "Industrial" },
 ];
 
 const Properties = () => {
@@ -27,7 +27,7 @@ const Properties = () => {
               </div>
               <div className="p-5">
                 <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-semibold">{lang === "en" ? p.nameEn : p.nameRu}</h3>
+                  <h3 className="font-semibold">{lang === "en" ? p.nameEn : p.nameUk}</h3>
                   <span className="text-xs px-2 py-0.5 bg-muted rounded text-muted-foreground">{p.type}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">{p.location}</p>
