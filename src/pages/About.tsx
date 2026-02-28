@@ -2,7 +2,8 @@ import { useI18n } from "@/contexts/I18nContext";
 import { Target, Eye, Award } from "lucide-react";
 
 const About = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const isEn = lang === "en";
 
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -12,28 +13,28 @@ const About = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { icon: Target, titleEn: "Precision", titleRu: "Точность", descEn: "Every decision is backed by rigorous data analysis and market intelligence.", descRu: "Каждое решение подкреплено строгим анализом данных и рыночной аналитикой." },
-            { icon: Eye, titleEn: "Transparency", titleRu: "Прозрачность", descEn: "Full visibility into portfolio performance, costs, and strategic direction.", descRu: "Полная прозрачность в отношении результатов портфеля, затрат и стратегии." },
-            { icon: Award, titleEn: "Excellence", titleRu: "Совершенство", descEn: "Institutional-grade standards applied to every asset and transaction.", descRu: "Стандарты институционального уровня для каждого актива и сделки." },
+            { icon: Target, titleEn: "Precision", titleUk: "Точність", descEn: "Every decision is backed by rigorous data analysis and market intelligence.", descUk: "Кожне рішення підкріплене ретельним аналізом даних та ринковою аналітикою." },
+            { icon: Eye, titleEn: "Transparency", titleUk: "Прозорість", descEn: "Full visibility into portfolio performance, costs, and strategic direction.", descUk: "Повна прозорість щодо результатів портфеля, витрат та стратегічного напрямку." },
+            { icon: Award, titleEn: "Excellence", titleUk: "Досконалість", descEn: "Institutional-grade standards applied to every asset and transaction.", descUk: "Стандарти інституційного рівня для кожного активу та угоди." },
           ].map((item, i) => (
             <div key={i} className="p-8 border border-border rounded bg-card">
               <item.icon className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">{item[`title${t("nav.home") === "Home" ? "En" : "Ru"}`] as string}</h3>
-              <p className="text-sm text-muted-foreground">{item[`desc${t("nav.home") === "Home" ? "En" : "Ru"}`] as string}</p>
+              <h3 className="text-lg font-semibold mb-2">{isEn ? item.titleEn : item.titleUk}</h3>
+              <p className="text-sm text-muted-foreground">{isEn ? item.descEn : item.descUk}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { value: "12+", labelEn: "Years", labelRu: "Лет" },
-            { value: "$240M+", labelEn: "Assets Managed", labelRu: "Активов под управлением" },
-            { value: "94%", labelEn: "Client Retention", labelRu: "Удержание клиентов" },
-            { value: "180+", labelEn: "Properties", labelRu: "Объектов" },
+            { value: "12+", labelEn: "Years", labelUk: "Років" },
+            { value: "€240M+", labelEn: "Assets Managed", labelUk: "Активів під управлінням" },
+            { value: "94%", labelEn: "Client Retention", labelUk: "Утримання клієнтів" },
+            { value: "180+", labelEn: "Properties", labelUk: "Об'єктів" },
           ].map((s, i) => (
             <div key={i} className="p-6 border border-border rounded">
               <p className="text-3xl font-bold mb-1">{s.value}</p>
-              <p className="text-sm text-muted-foreground">{t("nav.home") === "Home" ? s.labelEn : s.labelRu}</p>
+              <p className="text-sm text-muted-foreground">{isEn ? s.labelEn : s.labelUk}</p>
             </div>
           ))}
         </div>

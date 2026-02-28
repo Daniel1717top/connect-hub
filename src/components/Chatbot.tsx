@@ -7,23 +7,23 @@ interface Message {
   text: string;
 }
 
-const botResponses: Record<string, { en: string; ru: string }[]> = {
+const botResponses: Record<string, { en: string; uk: string }[]> = {
   default: [
     {
       en: "Based on current market data, commercial properties in the central business district are showing 7.2% annual yield. Shall I provide a detailed breakdown?",
-      ru: "По текущим рыночным данным, коммерческая недвижимость в центральном деловом районе показывает годовую доходность 7,2%. Предоставить детальную разбивку?",
+      uk: "За поточними ринковими даними, комерційна нерухомість у центральному діловому районі демонструє річну дохідність 7,2%. Надати детальну розбивку?",
     },
     {
       en: "Our portfolio analysis indicates strong momentum in the residential sector, with occupancy rates exceeding 94%. I recommend reviewing our latest quarterly report.",
-      ru: "Наш портфельный анализ указывает на сильную динамику в жилом секторе с уровнем заполняемости выше 94%. Рекомендую ознакомиться с последним квартальным отчётом.",
+      uk: "Наш портфельний аналіз вказує на сильну динаміку в житловому секторі із рівнем заповнюваності понад 94%. Рекомендую ознайомитися з останнім квартальним звітом.",
     },
     {
       en: "For risk-adjusted returns, I'd suggest a diversified approach: 60% premium residential, 25% commercial, 15% development projects. This allocation has historically outperformed the market by 3.1%.",
-      ru: "Для доходности с учётом рисков рекомендую диверсифицированный подход: 60% премиальное жильё, 25% коммерция, 15% девелопмент. Такая аллокация исторически превышала рынок на 3,1%.",
+      uk: "Для дохідності з урахуванням ризиків рекомендую диверсифікований підхід: 60% преміальне житло, 25% комерція, 15% девелопмент. Така алокація історично перевищувала ринок на 3,1%.",
     },
     {
       en: "The current interest rate environment favors long-term fixed-rate financing. I can model several scenarios for your consideration.",
-      ru: "Текущая процентная среда благоприятна для долгосрочного финансирования с фиксированной ставкой. Могу смоделировать несколько сценариев для вашего рассмотрения.",
+      uk: "Поточне середовище процентних ставок сприяє довгостроковому фінансуванню з фіксованою ставкою. Можу змоделювати кілька сценаріїв для вашого розгляду.",
     },
   ],
 };
@@ -62,7 +62,6 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* FAB */}
       <button
         onClick={() => setOpen(!open)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-foreground text-background rounded flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
@@ -71,16 +70,13 @@ const Chatbot = () => {
         {open ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
       </button>
 
-      {/* Chat Window */}
       {open && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[28rem] glass rounded shadow-2xl flex flex-col overflow-hidden">
-          {/* Header */}
           <div className="px-4 py-3 border-b border-border bg-foreground/5">
             <p className="text-sm font-semibold tracking-wide">{t("chat.title")}</p>
             <p className="text-xs text-muted-foreground">OSNOVA ESTATE</p>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {messages.map((msg, i) => (
               <div
@@ -101,7 +97,6 @@ const Chatbot = () => {
             <div ref={bottomRef} />
           </div>
 
-          {/* Input */}
           <div className="px-4 py-3 border-t border-border flex gap-2">
             <input
               value={input}

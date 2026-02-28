@@ -25,8 +25,8 @@ const Footer = () => {
           </div>
           <div className="text-sm text-muted-foreground">
             <p>info@osnova-estate.com</p>
-            <p>+7 (495) 000-00-00</p>
-            <p className="mt-4">Moscow, Russia</p>
+            <p>+380 (44) 000-00-00</p>
+            <p className="mt-4">Kyiv, Ukraine</p>
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-border text-center text-xs text-muted-foreground">

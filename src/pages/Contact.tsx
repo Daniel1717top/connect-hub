@@ -3,12 +3,12 @@ import { useI18n } from "@/contexts/I18nContext";
 import { toast } from "sonner";
 
 const Contact = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success(t("nav.home") === "Home" ? "Message sent successfully." : "Сообщение отправлено.");
+    toast.success(lang === "en" ? "Message sent successfully." : "Повідомлення надіслано успішно.");
     setForm({ name: "", email: "", message: "" });
   };
 
